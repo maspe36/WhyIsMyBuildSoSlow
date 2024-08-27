@@ -1,2 +1,6 @@
-# CLion default build directory
-cmake-build-debug/
+# Ignore IDE Folders
+.idea/
+.vscode/
+
+# Just ignore anything remotely resembling a build directory
+**build**/
