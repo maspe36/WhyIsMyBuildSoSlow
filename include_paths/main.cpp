@@ -1,7 +1,5 @@
-#include <iostream>
+#include "generated/folder_42/file_42.hpp"
 
 int main() {
-    std::cout << "include_paths" << std::endl;
-
-    return 0;
+    return kFile42;
 }

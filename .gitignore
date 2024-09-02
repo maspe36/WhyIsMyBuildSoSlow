@@ -4,3 +4,7 @@
 
 # Just ignore anything remotely resembling a build directory
 **build**/
+
+# Ignore the generated folders for the include_paths example
+generated/
+log.csv
