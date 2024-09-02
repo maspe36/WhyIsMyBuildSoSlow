@@ -15,8 +15,9 @@ def main(log_path):
     boxes = plt.boxplot(df)
 
     for median in boxes['medians']:
+        x = median.get_xdata()[0] + 0.15 # Get the x-coordinate of the median
         y = median.get_ydata()[0]  # Get the y-coordinate of the median
-        plt.text(median.get_xdata()[0], y + 0.2, f'{y:.2f}', ha='center')  # Adjust the label position as needed
+        plt.text(x, y, f'{y:.0f} ms', ha='left')  # Adjust the label position as needed
 
 
     # Add labels, title, and legend
