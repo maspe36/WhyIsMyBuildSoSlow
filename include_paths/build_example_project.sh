@@ -3,7 +3,7 @@ if [ -d "generated/" ]; then
   exit 1;
 fi
 
-for i in $(seq 1 100);
+for i in $(seq 1 1000);
 do
 	mkdir -p generated/folder_$i
 	echo "constexpr int kFile$i = $i;" >> generated/folder_$i/file_$i.hpp

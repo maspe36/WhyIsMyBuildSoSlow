@@ -3,7 +3,7 @@ project(templates)
 
 set(CMAKE_C_COMPILER "/usr/bin/clang-18")
 set(CMAKE_CXX_COMPILER "/usr/bin/clang++-18")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -ftime-trace -g -O0")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -ftime-trace")
 
 add_executable(templates a.cpp b.cpp main.cpp)
 target_compile_options(templates PRIVATE "-ftemplate-depth=8192")

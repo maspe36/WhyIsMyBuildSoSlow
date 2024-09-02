@@ -1,5 +1,5 @@
-#include "generated/folder_42/file_42.hpp"
+#include <iostream>
 
 int main() {
-    return kFile42;
+    std::cout << "Hello World!" << std::endl;
 }

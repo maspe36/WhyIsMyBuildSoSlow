@@ -1,5 +1,5 @@
 # include paths
-When we give our compilers include paths (`-I`), we are giving them supplamental folders to search for our headers. 
+When we give our compilers include paths (`-I`), we are giving them supplemental folders to search for our headers. 
 Searching these folders requires our compilers to interact with our filesystem which is not free. 
 
 I have observed a multi-million line project save ~2 minutes on a CI build by just removing two unnecessary include 

@@ -2,9 +2,9 @@
 .idea/
 .vscode/
 
-# Just ignore anything remotely resembling a build directory
+# Just ignore anything remotely resembling a build or log directory
 **build**/
+**log**/
 
 # Ignore the generated folders for the include_paths example
 generated/
-log.csv

@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.29)
 project(includes)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 function(target_include_generated_directories target num)
     set(gen_dicts)
 
@@ -20,7 +22,7 @@ endfunction()
 
 set(CMAKE_C_COMPILER "/usr/bin/clang-18")
 set(CMAKE_CXX_COMPILER "/usr/bin/clang++-18")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -ftime-trace -g -O0")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -ftime-trace")
 
 add_executable(one_include_path main.cpp)
 target_include_generated_directories(one_include_path 0)
@@ -30,3 +32,6 @@ target_include_generated_directories(ten_include_paths 10)
 
 add_executable(hundred_include_paths main.cpp)
 target_include_generated_directories(hundred_include_paths 100)
+
+add_executable(thousand_include_paths main.cpp)
+target_include_generated_directories(thousand_include_paths 1000)
