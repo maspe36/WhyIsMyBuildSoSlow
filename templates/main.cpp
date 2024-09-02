@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "templates.hpp"
 #include "a.h"
 #include "b.h"
 
