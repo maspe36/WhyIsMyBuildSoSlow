@@ -14,17 +14,32 @@ def main(log_path):
 
     boxes = plt.boxplot(df)
 
-    for median in boxes['medians']:
-        x = median.get_xdata()[0] + 0.15 # Get the x-coordinate of the median
-        y = median.get_ydata()[0]  # Get the y-coordinate of the median
-        plt.text(x, y, f'{y:.0f} ms', ha='left')  # Adjust the label position as needed
-
-
     # Add labels, title, and legend
-    plt.xlabel("Number of Include Paths")
-    plt.xticks([1,2,3,4], ["One", "Ten", "Hundred", "Thousand"])
-    plt.ylabel("Time (ms)")
-    plt.title("Excessive Include Paths")
+    tick_names = ["1", "10", "100", "1000"]
+
+    plt.xlabel("Include Paths", fontsize=24)
+    plt.xticks([1,2,3,4], tick_names, fontsize=18)
+    plt.yticks(fontsize=18)
+    plt.ylabel("Time (ms)", fontsize=24)
+    plt.title("Excessive Include Paths", fontsize=36)
+
+    # medians = [f"{median.get_ydata()[0]:.0f} ms" for median in boxes['medians']]
+
+    # legend_entries = [f"{label} (Median: {median})" for label, median in zip(tick_names, medians)]
+    # plt.legend(legend_entries, fontsize=18)
+
+    for i, median_line in enumerate(boxes['medians']):
+        # Get x-coordinate of the median line
+        x = median_line.get_xdata()[0]
+
+        # Get y-coordinate of the median line, which is also the value we want to display :)
+        y = median_line.get_ydata()[0]
+        plt.text(x + 0.22, y + 0.2, f"{y:.0f} ms", ha='center', va='bottom', fontsize=18)
+
+
+    sample_counts = [len(group) for group in df]
+    new_labels = [f"{label} Paths (n={count + 1})" for label, count in zip(tick_names, sample_counts)]
+    plt.xticks(range(1, len(tick_names) + 1), new_labels)
 
     # Show the plot
     plt.show()
