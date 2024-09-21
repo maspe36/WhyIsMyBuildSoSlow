@@ -1,3 +1,5 @@
+**Please note, this readme needs to be updated to fully reflect the content covered in the talk. It is quite close in but the takeaway is different.**
+
 # include paths
 When we give our compilers include paths (`-I`), we are giving them supplemental folders to search for our headers. 
 Searching these folders requires our compilers to interact with our filesystem which is not free. 
