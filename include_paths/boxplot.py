@@ -20,8 +20,8 @@ def main(log_path):
     plt.xlabel("Include Paths", fontsize=24)
     plt.xticks([1,2,3,4], tick_names, fontsize=18)
     plt.yticks(fontsize=18)
-    plt.ylabel("Time (ms)", fontsize=24)
-    plt.title("Excessive Include Paths", fontsize=36)
+    plt.ylabel("Build Time (ms)", fontsize=24)
+    plt.title("Include Paths Impact on Build Time", fontsize=36)
 
     # medians = [f"{median.get_ydata()[0]:.0f} ms" for median in boxes['medians']]
 
